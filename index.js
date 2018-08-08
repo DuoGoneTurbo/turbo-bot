@@ -11,4 +11,4 @@ client.on("message", (message) => {
   }
 });
 
-client.login("0VINxDClKEX07ps3TXWzNT0yHIAJyXyB");
+client.login("SuperSecretTokenHere");
