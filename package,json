@@ -1,0 +1,30 @@
+{
+  "name": "turbo-bot",
+  "version": "0.0.1",
+  "description": "A bot for Discord",
+  "readme": "README.md",
+  "author": "Duo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DuoGoneTurbo/turbo-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DuoGoneTurbo/turbo-bot/issues"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "discordapp"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "directories": {
+    "lib": "./lib"
+  },
+  "dependencies": {
+    "discord.js": "*",
+    "youtube-node": "1.2.x",
+    "query-string": "3.*",
+    "request": ">=2.58.0"
+  }
+}
