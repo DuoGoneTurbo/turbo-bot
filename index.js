@@ -1,36 +1,39 @@
-const Discord = require("discord.js");
+/*
+  A ping pong bot, whenever you send "ping", it replies "pong".
+*/
+
+// Import the discord.js module
+const Discord = require('discord.js');
+
+// Create an instance of a Discord client
 const client = new Discord.Client();
 
-client.on("ready", () => {
-  console.log("I am ready!");
+// The token of your bot - https://discordapp.com/developers/applications/me
+const token = 'your bot token here';
+
+// The ready event is vital, it means that your bot will only start reacting to information
+// from Discord _after_ ready is emitted
+client.on('ready', () => {
+  console.log('I am ready!');
 });
 
-client.on("message", (message) => {
-  if(message.content === "ayy") {
-    message.channel.send("Ayy, lmao!");
-  }
-  if(message.content === "wat") {
-    message.channel.send("Say what?");
-  }
-  if(message.content === "lol") {
-    message.channel.send("roflmaotntpmp");
-  }
-});
-
-// Create an event listener for new guild members
-client.on('guildMemberAdd', member => {
-  // Send the message to a designated channel on a server:
-  const channel = member.guild.channels.find('name', 'welcome');
-  // Do nothing if the channel wasn't found on this server
-  if (!channel) return;
-  // Send the message, mentioning the member
-  channel.send(`Welcome to the server, ${member}`);
-});
-
-client.on("message", (message) => {
-  if (message.content.startsWith("ping")) {
-    message.channel.send("pong!");
+// Create an event listener for messages
+client.on('message', message => {
+  // If the message is "ping"
+  if (message.content === 'ping') {
+    // Send "pong" to the same channel
+    message.channel.send('pong');
   }
 });
 
-client.login("NDc2NzQwNzY2Mzc5ODAyNjI1.DkzqWQ.NAszZfIgOutS5XPw8LXNoFK1dUY");
+// Create an event listener for messages
+client.on('message', message => {
+  // If the message is "what is my avatar"
+  if (message.content === 'what is my avatar') {
+    // Send the user's avatar URL
+    message.reply(message.author.avatarURL);
+  }
+});
+
+// Log our bot in
+client.login(token);
