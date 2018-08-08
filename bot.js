@@ -1,17 +1,25 @@
-// Discord.js bot
-const Discord = require('discord.js');
-const client = new Discord.Client();
+const Discord = require("discord.js");
+const bot = new Discord.Client({disableEveryone: true});
 
-client.on('ready', () => {
-    client.user.setActivity('https://git.io/d.js-heroku', {type: 'WATCHING'});
+bot.on("ready", async () => {
+  console.log(`${bot.user.username} is online!`);
+  bot.user.setActivity(`Hey, Wassup!`);
 });
 
-client.on('message', msg => {
-    if (!msg.content.startsWith(process.env.PREFIX) || !msg.guild) return;
-    const command = msg.content.split(' ')[0].substr(process.env.PREFIX.length);
-    const args = msg.content.split(' ').slice(1).join(' ');
-    if (command === 'guide') return msg.channel.send('https://git.io/d.js-heroku');
-    else if (command === 'invite') return msg.channel.send(process.env.INVITE);
+bot.on("message", async message => {
+
+  if (message.author.bot) return;
+  if (message.channel.type === "dm") return;
+
+  let prefix = '-';
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0];
+  let args = messageArray.slice(1);
+
+  if (cmd === `${prefix}ping`){
+    message.channel.send("Pong!");
+  }
 });
 
-client.login(process.env.TOKEN);
+bot.login(process.env.token);
+© 2018 GitHub, Inc.
