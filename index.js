@@ -27,7 +27,6 @@ if (msg.startsWith(prefix + 'PURGE')) { // This time we have to use startsWith, 
                 message.channel.send('You need the \`Owner\` role to use this command.'); // This tells the user in chat that they need the role.
                 return; // this returns the code, so the rest doesn't run.
             }
-        });
 
             // We want to check if the argument is a number
             if (isNaN(args[0])) {
@@ -36,7 +35,6 @@ if (msg.startsWith(prefix + 'PURGE')) { // This time we have to use startsWith, 
                 // Cancels out of the script, so the rest doesn't run.
                 return;
             }
-});
 
             const fetched = await message.channel.fetchMessages({limit: args[0]}); // This grabs the last number(args) of messages in the channel.
             console.log(fetched.size + ' messages found, deleting...'); // Lets post into console how many messages we are deleting
@@ -46,13 +44,11 @@ if (msg.startsWith(prefix + 'PURGE')) { // This time we have to use startsWith, 
                 .catch(error => message.channel.send(`Error: ${error}`)); // If it finds an error, it posts it into the channel.
 
         }
-});
 
         // We want to make sure we call the function whenever the purge command is run.
         purge(); // Make sure this is inside the if(msg.startsWith)
 
     }
-});
 
 client.on("message", (message) => {
   if (message.content.startsWith("ping")) {
