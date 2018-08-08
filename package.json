@@ -1,31 +1,14 @@
 {
-  "name": "Turbo Bot",
+  "name": "turbo-bot",
   "version": "1.0.0",
-  "description": "A Bot for Duo",
+  "description": "",
   "main": "bot.js",
-  "engines": {
-    "node": "8.x",
-    "npm": "*"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node bot.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DuoGoneTurbo/turbo-bot.git"
-  },
-  "keywords": [
-    "heroku",
-    "discord.js"
-  ],
-  "author": "DuoGoneTurbo",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/DuoGoneTurbo/turbo-bot/issues"
-  },
-  "homepage": "https://github.com/DuoGoneTurbo/turbo-bot#readme",
+  "author": "Duo",
+  "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.3.0"
+    "discord.js": "^11.3.2"
   }
 }
