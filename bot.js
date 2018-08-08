@@ -22,4 +22,3 @@ bot.on("message", async message => {
 });
 
 bot.login(process.env.token);
-© 2018 GitHub, Inc.
